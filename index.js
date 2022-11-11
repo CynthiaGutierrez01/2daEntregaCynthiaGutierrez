@@ -35,28 +35,64 @@ alert (listaDeAlfajores.join ("/"))
 let precio = 0
 
 
-    do{
-        gusto = prompt ("Por favor ingrese que gusto de alfajor desea llevar. Indiquelo con el número correspondiente, siendo  1. Chocolate Negro + Dulce de leche 2. Chocolate Negro + Nutella 3. Chocolate Blanco + Dulce de Leche 4. Chocolate Blanco + nutella 5. Maicena")
-    if(parseInt(gusto === 1)){
+// Gusto de los alfajores
+
+    function sabores(){
+    gusto = prompt ("Por favor ingrese que gusto de alfajor desea llevar. Indiquelo con el número correspondiente, siendo  1. Chocolate Negro + Dulce de leche 2. Chocolate Negro + Nutella 3. Chocolate Blanco + Dulce de Leche 4. Chocolate Blanco + nutella 5. Maicena")
+    
+    if(gusto == 1){
     alert ( nombreCliente + " elegiste Alfajor de Chocolate Negro con Dulce de Leche");
     precio = 300;
-    }else if(parseInt(gusto === 2)){
+    }else if(gusto == 2){
     alert ( nombreCliente + " elegiste Alfajor de Chocolate Negro con Nutella");
     precio = 350;
-    }else if(parseInt(gusto === 3)){
+    }else if(gusto == 3){
     alert ( nombreCliente + " elegiste Alfajor de Chocolate Blanco con Dulce de Leche");
     precio = 300;
-    }else if(parseInt(gusto === 4)){
+    }else if(gusto == 4){
     alert ( nombreCliente + " elegiste Alfajor de Chocolate Blanco con Nutella");
     precio = 350;
-    }else (parseInt(gusto === 5))
+    }else if (gusto == 5){
     alert ( nombreCliente + " elegiste Alfajor de Maicena con Dulce de Leche");
     precio = 250;   
-    }while (parseInt (gusto > 6))
-    alert ("no contamos con ese gusto por el momento.");
+    }else {
+    alert ("no contamos con ese gusto por el momento.")
+    sabores();
+    }
+    }
+    sabores();
 
+// Cantidad de Alfajores a comprar
 
-let cantidad = parseInt (prompt ( "Qué cantidad le gustaría llevar?"));
+    function unidades(){
+        let cantidad = parseInt (prompt ( "Qué cantidad le gustaría llevar?"));
+    }
+    unidades();
 
-carritoDeCompras.push ({gusto, cantidad, precio})
-alert (carritoDeCompras)
+carritoDeCompras.push ({gusto, unidades, precio})
+console.log (carritoDeCompras)
+
+// Le preguntamos al cliente si quiere comprar algo más
+
+function suma(){
+do{
+    sumarMas = prompt ("Quiere probar otro gusto de Alfajor?")
+    if(sumarMas == "si"){
+        sabores();
+        unidades();
+        suma();
+    }else if(sumarMas == "no"){
+        alert("Que disfrute mucho de su elección!")
+        carritoDeCompras.forEach ((carritoFinal) => {
+            console.log(`alfajor: ${carritoFinal.gusto}, unidades: ${carritoFinal.cantidad}, total a pagar por producto ${carritoFinal.cantidad * carritoFinal.precio}`)
+        })
+        }else{
+        alert("ingrese una opción válida: " + sumarMas + " no es una opción válida");
+    }
+}while (sumarMas !== "si" && sumarMas !== "no")
+}
+suma();
+
+// Carrito Final
+const total = carritoDeCompras.reduce ((acc, el) => acc + el.precio * el.cantidad, 0)
+console.log(`el total a pagar por su compra es: ${total}`)
