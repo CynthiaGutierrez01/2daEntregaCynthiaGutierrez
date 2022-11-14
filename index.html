@@ -4,93 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/output.css">
     <title>Alfajorera</title>
 </head>
 <body>
     <header>
-        <nav class="bg-cyan-100">
-            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-              <div class="relative flex h-16 items-center justify-between">
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                  <!-- Mobile menu button-->
-                  <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <!--
-                      Icon when menu is closed.
-          
-                      Heroicon name: outline/bars-3
-          
-                      Menu open: "hidden", Menu closed: "block"
-                    -->
-                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                    <!--
-                      Icon when menu is open.
-          
-                      Heroicon name: outline/x-mark
-          
-                      Menu open: "block", Menu closed: "hidden"
-                    -->
-                    <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                  <div class="flex flex-shrink-0 items-center">
-                    <img class="block h-20 w-auto lg:hidden" src="./assets/img/logo.png" alt="logoLaAlfajorera">
-                    <img class="hidden h-20 w-auto lg:block" src="./assets/img/logo.png" alt="logoLaAlfajorera">
-                  </div>
-                  <div class="hidden sm:ml-6 sm:block">
-                    <div class="flex space-x-4">
-                      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                      <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">La Alfajorera</a>
-          
-                    </div>
-                  </div>
-                </div>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          
-                    <!--
-                      Dropdown menu, show/hide based on menu state.
-          
-                      Entering: "transition ease-out duration-100"
-                        From: "transform opacity-0 scale-95"
-                        To: "transform opacity-100 scale-100"
-                      Leaving: "transition ease-in duration-75"
-                        From: "transform opacity-100 scale-100"
-                        To: "transform opacity-0 scale-95"
-                    -->
-                  </div>
-                </div>
-              </div>
+      <nav class="navbar navbar-expand-lg menubs">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./assets/img/logo.jpg" alt="imagenLogo" class="imagenLogo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="">Mi Historia</a>
+              <a class="nav-link" href="">Alfajores</a>
+              <a class="nav-link" href="">Contacto</a>
             </div>
-          
-            <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="sm:hidden" id="mobile-menu">
-              <div class="space-y-1 px-2 pt-2 pb-3">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Home</a>
-          
-                <a href="#" class="text-gray-400 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Mi Historia</a>
-          
-                <a href="#" class="text-gray-400 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Productos</a>
-          
-                <a href="#" class="text-gray-400 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
-              </div>
-            </div>
-          </nav>
-        <h1 class="text-red-500">
+          </div>
+        </div>
+    </nav>
+      <div>
+        <h1 class="shadow p-3 mb-5 bg-body rounded">
             La Alfajorera
         </h1>
+      </div>
     </header>
     
     <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 </body>
 </html>

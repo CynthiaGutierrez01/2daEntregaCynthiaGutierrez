@@ -25,7 +25,7 @@ const alfajores = [
     {id:5, nombre:"Alfajor de Maicena con Dulce de Leche", precio:250},
 ];
 
-let carritoDeCompras = []
+let carrito = []
 
 alert ("Le muestro los increibles alfajores artesanales que producimos!")
 
@@ -66,11 +66,12 @@ let precio = 0
 
     function unidades(){
         let cantidad = parseInt (prompt ( "Qué cantidad le gustaría llevar?"));
+        carrito.push ({gusto, cantidad, precio})
+        console.log (carrito);
+        return cantidad;
     }
-    unidades();
+    let cantidad = unidades ();
 
-carritoDeCompras.push ({gusto, unidades, precio})
-console.log (carritoDeCompras)
 
 // Le preguntamos al cliente si quiere comprar algo más
 
@@ -83,7 +84,7 @@ do{
         suma();
     }else if(sumarMas == "no"){
         alert("Que disfrute mucho de su elección!")
-        carritoDeCompras.forEach ((carritoFinal) => {
+        carrito.forEach ((carritoFinal) => {
             console.log(`alfajor: ${carritoFinal.gusto}, unidades: ${carritoFinal.cantidad}, total a pagar por producto ${carritoFinal.cantidad * carritoFinal.precio}`)
         })
         }else{
@@ -94,5 +95,6 @@ do{
 suma();
 
 // Carrito Final
-const total = carritoDeCompras.reduce ((acc, el) => acc + el.precio * el.cantidad, 0)
+const total = carrito.reduce ((acc, el) => acc + el.precio * el.cantidad, 0)
 console.log(`el total a pagar por su compra es: ${total}`)
+

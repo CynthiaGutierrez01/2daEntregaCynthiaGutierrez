@@ -1,0 +1,27 @@
+.menubs {
+  font-size: 1.3em;
+}
+.menubs a {
+  text-decoration: none;
+}
+
+.imagenLogo {
+  height: 1em;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+}
+@font-face {
+  font-family: "Comfortaa", cursive;
+}
+.titulo {
+  font-family: Roboto;
+}
+
+.nav {
+  font-family: Comfortaa;
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
